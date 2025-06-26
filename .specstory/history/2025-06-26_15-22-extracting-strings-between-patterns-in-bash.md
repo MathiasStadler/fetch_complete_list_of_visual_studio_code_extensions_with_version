@@ -80,7 +80,55 @@ pls  add  a function with this  to  python/02_org_from_stackoverflow_article.py
 
 _**Assistant**_
 
+````python
+# ...existing code...
 
+import re
+
+def extract_between_vsextensions(url):
+    """
+    Extracts the string between 'vsextensions/' and the next '/' in the given URL.
+    Returns the matched string or None if not found.
+    """
+    match = re.search(r'vsextensions/([^/]+)/', url)
+    if match:
+        return match.group(1)
+    return None
+
+# ...existing code...
+````
+
+You can now use `extract_between_vsextensions(url)` to get the extension name from a URL like  
+`https://marketplace.visualstudio.com/_apis/public/gallery/publishers/MS-CEINTL/vsextensions/vscode-language-pack-fr/1.58.2/vspackage`.  
+It will return `'vscode-language-pack-fr'`.
+
+---
+
+_**User**_
+
+Please apply the new funcion of the output of the program
+
+---
+
+_**Assistant**_
+
+````python
+# ...existing code...
+        for extension_version_info in extensions_versions:
+            extension_version = extension_version_info['version']
+            extension_artifact_download_url = f'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/{extension_publisher_username}/vsextensions/{extension_name}/{extension_version}/vspackage'
+            # Use the new function to extract the name between vsextensions/ and the next /
+            extracted_name = extract_between_vsextensions(extension_artifact_download_url)
+            print(
+                extension_name,
+                extension_description,
+                extension_version,
+                extension_artifact_download_url,
+                extensions_statistics['install'],
+                extracted_name  # print the extracted string
+            )
+# ...existing code...
+````
 
 ---
 

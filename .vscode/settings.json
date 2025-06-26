@@ -3,6 +3,7 @@
         "stackoverflow",
         "trapapa",
         "venv",
-        "venvs"
+        "venvs",
+        "vsextensions"
     ]
 }

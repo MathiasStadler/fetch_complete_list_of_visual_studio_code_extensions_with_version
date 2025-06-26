@@ -2,6 +2,7 @@
 # https://stackoverflow.com/questions/71742538/how-to-programmatically-retrieve-the-list-of-visual-studio-code-extensions-on-th
 import requests
 from requests.adapters import HTTPAdapter, Retry
+import re
 
 
 def get_vscode_extensions(max_page=10000, page_size=100,
@@ -83,6 +84,17 @@ def get_vscode_extensions(max_page=10000, page_size=100,
 
         if len(extensions) != page_size:
             break
+
+
+def extract_between_vsextensions(url):
+    """
+    Extracts the string between 'vsextensions/' and the next '/' in the given URL.
+    Returns the matched string or None if not found.
+    """
+    match = re.search(r'vsextensions/([^/]+)/', url)
+    if match:
+        return match.group(1)
+    return None
 
 
 def main():

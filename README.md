@@ -215,6 +215,10 @@ Bash - extract a string between two patterns inside a file
 
 https://regex-generator.olafneumann.org/?sampleText=&flags=i
 
+### grep vscode extention from file
+
+grep -oP 'vsextensions/\K[^/]+' /tmp/output.txt
+
 <!--TODO check se https://github.com/MathiasStadler/rust_ib_async/blob/master/PROJECT_PATH.md -->
 <!-- Link sign - Don't Found a better way :-( - You know a better method? - send me a email,please -->
 [1]: img/link_symbol.svg
