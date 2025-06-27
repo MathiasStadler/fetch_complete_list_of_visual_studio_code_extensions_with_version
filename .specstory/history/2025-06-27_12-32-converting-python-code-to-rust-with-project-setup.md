@@ -369,3 +369,15 @@ Let me know if you need this integrated into your existing code!
 
 ---
 
+_**User**_
+
+I can not see any   extension_name inside the another output file. Pls help
+
+---
+
+_**Assistant**_
+
+
+
+---
+

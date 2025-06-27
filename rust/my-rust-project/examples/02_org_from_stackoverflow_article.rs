@@ -3,7 +3,8 @@ use reqwest::header::{HeaderMap, HeaderValue, ACCEPT};
 use serde::{Deserialize};
 use serde_json::json;
 use std::fs::File;
-use std::io::{Write, BufWriter};
+use std::io::{self, Write};
+use std::path::Path;
 
 #[derive(Debug, Deserialize)]
 struct Publisher {
@@ -41,9 +42,18 @@ struct ApiResponse {
 
 fn save_extensions_to_file(filename: &str, lines: &[String]) -> std::io::Result<()> {
     let file = File::create(filename)?;
-    let mut writer = BufWriter::new(file);
+    let mut writer = io::BufWriter::new(file);
     for line in lines {
         writeln!(writer, "{}", line)?;
+    }
+    Ok(())
+}
+
+fn save_extension_names(filename: &str, names: &[String]) -> std::io::Result<()> {
+    let file = File::create(filename)?;
+    let mut writer = io::BufWriter::new(file);
+    for name in names {
+        writeln!(writer, "{}", name)?;
     }
     Ok(())
 }
@@ -63,6 +73,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut page = 1;
 
     let mut output_lines = Vec::new();
+    let mut extension_names = Vec::new(); // <-- Add this
 
     loop {
         let flags = 0x1 | 0x2 | 0x4 | 0x8 | 0x10 | 0x40 | 0x80 | 0x100 | 0x8000;
@@ -92,6 +103,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let extensions = &resp.results[0].extensions;
         for ext in extensions {
             let extension_name = &ext.extensionName;
+            extension_names.push(extension_name.clone()); // <-- Collect extension names
+
             let extension_description = &ext.extensionName;
             let publisher = &ext.publisher.publisherName;
             let statistics: std::collections::HashMap<_, _> = ext.statistics.iter()
@@ -124,6 +137,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 
     save_extensions_to_file("extensions_output.txt", &output_lines)?;
+    save_extension_names("extension_names.txt", &extension_names)?; // <-- Save extension names
 
     Ok(())
 }
