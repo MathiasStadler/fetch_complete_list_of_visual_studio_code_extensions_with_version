@@ -3,8 +3,11 @@
 import requests
 from requests.adapters import HTTPAdapter, Retry
 import re
-
-
+# No additional code is needed here for the Python version.
+def save_extensions_to_file(filename, extensions_data):
+    with open(filename, 'w', encoding='utf-8') as f:
+        for data in extensions_data:
+            f.write('\t'.join(map(str, data)) + '\n')
 def get_vscode_extensions(max_page=10000, page_size=100,
                           include_versions=True, include_files=True, include_category_and_tags=True, include_shared_accounts=True, include_version_properties=True,
                           exclude_non_validated=False, include_installation_targets=True, include_asset_uri=True, include_statistics=True,

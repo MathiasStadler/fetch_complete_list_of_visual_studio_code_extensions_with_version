@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
+        "forcelist",
+        "println",
+        "reqwest",
+        "serde",
         "stackoverflow",
         "trapapa",
         "venv",

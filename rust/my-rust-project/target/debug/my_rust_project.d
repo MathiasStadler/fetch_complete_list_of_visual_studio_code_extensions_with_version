@@ -1,0 +1,1 @@
+/tmp/fetch_complete_list_of_visual_studio_code_extensions_with_version/rust/my-rust-project/target/debug/my_rust_project: /tmp/fetch_complete_list_of_visual_studio_code_extensions_with_version/rust/my-rust-project/src/main.rs

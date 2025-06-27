@@ -40,15 +40,15 @@ source .venv/bin/activate
 ```
 
 ### deactivate virtual environments
-
+<!-- Required to comply with the Markdownlint specification -->
 ```bash
 # inside the virtual environments
 # (.venv) trapapa@debian$ deactivate
 deactivate
 ```
-
->[!Note] How does "cat << EOF" work in bash? [![alt text][1]](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
-> <!-- -->
+<!-- Required to comply with the Markdownlint specification -->
+>[!NOTE] How does "cat << EOF" work in bash? [![alt text][1]](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
+> <!-- Required to comply with the Markdownlint specification -->
 > ```bash
 >cat <<EOF > print.sh
 >#!/bin/bash
@@ -56,20 +56,20 @@ deactivate
 >echo $PWD
 >EOF
 >```
-><!-- -->
+><!-- Required to comply with the Markdownlint specification -->
 
 ## copy code example from article
 
 - 01_test_eof.py
-<!-- -->
+<!-- Required to comply with the Markdownlint specification -->
 ```bash
 cat <<EOF > python/01_test_eof.py
 print("Hallo python!")
 EOF
 ```
-<!-- -->
+<!-- Required to comply with the Markdownlint specification -->
 - 02_org_from_stackoverflow_article.py
-<!-- -->
+<!-- Required to comply with the Markdownlint specification -->
 ```bash
 cat <<EOF > python/02_org_from_stackoverflow_article.py
 # FROM HERE
@@ -195,29 +195,37 @@ EOF
 pip3 install requests
 pip3 install requests.adapters 
 ```
-<!-- -->
+<!-- Required to comply with the Markdownlint specification -->
 
 ### Run inside /tmp folder
 
 ```bash
-/home/trapapa/complete_list_of_visual_studio_code_extensions_with_version/.venv/bin/python /home/trapapa/complete_list_of_visual_studio_code_extensions_with_version/python/02_org_from_stackoverflow_article.py >/tmp/output.txt
+# FIXIT path project folder had change
+/home/trapapa/complete_list_of_visual_studio_code_extensions_with_version/.venv/bin/python /home/trapapa/complete_list_of_visual_studio_code_extensions_with_version/python/02_org_from_stackoverflow_article.py >/tmp/output_vscode_extension.txt
 ```
-<!-- -->
+<!-- Required to comply with the Markdownlint specification -->
 
+### Found name of extension by regex pattern in bash terminal
+<!-- Required to comply with the Markdownlint specification -->
+```bash
+grep vscode-language-pack  /tmp/output_vscode_extension.txt | cut -d " " -f 1 
+```
+<!-- Required to comply with the Markdownlint specification -->
 #### Grep all vscode-language-pack from output.txt
-<!-- -->
+<!-- Required to comply with the Markdownlint specification -->
 ```bash
 grep -Hrn 'vscode-language-pack' /tmp/output.txt >/tmp/vscode-language-pack.txt
 ```
-<!-- -->
+<!-- Required to comply with the Markdownlint specification -->
 
-Bash - extract a string between two patterns inside a file
+Bash - extract a string between two patterns inside a file [![alt text][1]](https://regex-generator.olafneumann.org/?sampleText=&flags=i)
 
-https://regex-generator.olafneumann.org/?sampleText=&flags=i
-
-### grep vscode extention from file
-
+### grep vscode extension name from file
+<!-- Required to comply with the Markdownlint specification -->
+```bash
 grep -oP 'vsextensions/\K[^/]+' /tmp/output.txt
+```
+<!-- Required to comply with the Markdownlint specification -->
 
 <!--TODO check se https://github.com/MathiasStadler/rust_ib_async/blob/master/PROJECT_PATH.md -->
 <!-- Link sign - Don't Found a better way :-( - You know a better method? - send me a email,please -->
