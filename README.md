@@ -47,7 +47,7 @@ source .venv/bin/activate
 deactivate
 ```
 
-> [!Note] How does "cat << EOF" work in bash? [![alt text][1]](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
+>[!Note] How does "cat << EOF" work in bash? [![alt text][1]](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
 > <!-- -->
 > ```bash
 >cat <<EOF > print.sh
