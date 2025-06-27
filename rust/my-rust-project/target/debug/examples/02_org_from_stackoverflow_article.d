@@ -1,0 +1,1 @@
+/tmp/fetch_complete_list_of_visual_studio_code_extensions_with_version/rust/my-rust-project/target/debug/examples/02_org_from_stackoverflow_article: /tmp/fetch_complete_list_of_visual_studio_code_extensions_with_version/rust/my-rust-project/examples/02_org_from_stackoverflow_article.rs
