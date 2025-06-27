@@ -1,4 +1,4 @@
-# Get the complete list of Visual Studio Code Extensions with version
+# Fetch complete list of Visual Studio Code Extensions with version
 
 Rename repo name on GitHub
 
